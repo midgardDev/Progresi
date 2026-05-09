@@ -86,8 +86,8 @@ export const exportStudentReport = (student: StudentReport, schoolName: string =
     headStyles: { fillColor: [34, 197, 94], textColor: 255 },
   })
   
-  // Footer
-  const pageCount = doc.getNumberOfPages()
+  // Footer 
+  const pageCount = doc.internal.pages.length - 1
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i)
     doc.setFontSize(8)
@@ -132,6 +132,19 @@ export const exportClassReport = (
     theme: "striped",
     headStyles: { fillColor: [59, 130, 246], textColor: 255 },
   })
+  
+  const pageCount = doc.internal.pages.length - 1
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i)
+    doc.setFontSize(8)
+    doc.setTextColor(150, 150, 150)
+    doc.text(
+      `Progresi - CBC Assessment Tracker | Page ${i} of ${pageCount}`,
+      105,
+      doc.internal.pageSize.height - 10,
+      { align: "center" }
+    )
+  }
   
   doc.save(`${className.replace(/\s/g, "_")}_Class_Report.pdf`)
 }
