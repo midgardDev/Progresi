@@ -411,7 +411,7 @@ export default function DashboardPage() {
         {recentCompetencies.length > 0 && (
           <div className="mt-8 bg-white rounded-lg shadow">
             <div className="px-4 md:px-6 py-4 border-b">
-              <h3 className="text-base md:text-lg font-semibold">Recent Assessments</h3>
+              <h3 className="text-base md:text-lg font-semibold">Recent Competencies</h3>
             </div>
             <div className="divide-y divide-gray-200">
               {recentCompetencies.slice(0, 5).map((comp: any) => {
