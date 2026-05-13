@@ -59,7 +59,7 @@ export default function CreateAssessmentModal({
         })
         onAssessmentCreated()
         onClose()
-        alert("✅ Assessment created successfully!")
+        alert("Assessment created successfully!")
       } else {
         const data = await response.json()
         setError(data.error || "Failed to create assessment")

@@ -65,7 +65,7 @@ export default function EditStudentModal({
       if (response.ok) {
         onStudentUpdated()
         onClose()
-        alert("✅ Student updated successfully!")
+        alert("Student updated successfully!")
       } else {
         const data = await response.json()
         setError(data.error || "Failed to update student")

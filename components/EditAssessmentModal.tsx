@@ -76,7 +76,7 @@ export default function EditAssessmentModal({
       if (response.ok) {
         onAssessmentUpdated()
         onClose()
-        alert("✅ Assessment updated successfully!")
+        alert("Assessment updated successfully!")
       } else {
         const data = await response.json()
         setError(data.error || "Failed to update assessment")

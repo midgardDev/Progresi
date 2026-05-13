@@ -67,7 +67,7 @@ export default function RecordScoresModal({
         setSelectedAssessment("")
         onScoresRecorded()
         onClose()
-        alert("✅ Scores recorded successfully!")
+        alert("Scores recorded successfully!")
       } else {
         const data = await response.json()
         setError(data.error || "Failed to record scores")
